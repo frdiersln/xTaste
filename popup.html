@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xTaste</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>xTaste</h1>
+        </div>
+        
+        <div id="warning" class="warning hidden">
+            <p>⚠️ Open X likes page to use extension please</p>
+        </div>
+        
+        <div class="content">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Loaded Posts:</span>
+                    <div class="stat-value-with-reset">
+                        <span id="postCount" class="stat-value">0</span>
+                        <button id="resetButton" class="btn-reset" title="Reset loaded posts">✕</button>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status:</span>
+                    <span id="status" class="stat-value">Ready</span>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button id="loadButton" class="btn primary">
+                    <span id="loadButtonText">Load All Liked Posts</span>
+                </button>
+                
+                <button id="saveButton" class="btn secondary" disabled>
+                    Save as HTML
+                </button>
+            </div>
+            
+            <div id="progress" class="progress-container hidden">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <p id="progressText" class="progress-text">Loading posts...</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
