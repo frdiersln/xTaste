@@ -250,6 +250,14 @@ class PopupController {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My X/Twitter Likes - xTaste Export</title>
     <style>
+        :root {
+            --color-deep-purple: #2D174C;
+            --color-hot-pink: #EF4A84;
+            --color-sunset-orange: #F5A138;
+            --color-sky-blue: #67D3F3;
+            --color-white: #FFFFFF;
+        }
+
         * {
             margin: 0;
             padding: 0;

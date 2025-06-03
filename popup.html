@@ -9,39 +9,45 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>xTaste</h1>
+            <h1> <img src="icons/icon48.png" alt="xTaste Logo"> <br/> xTaste</h1>
         </div>
         
         <div id="warning" class="warning hidden">
-            <p>⚠️ Open X likes page to use extension please</p>
+            <p>⚠️ Please open your X/Twitter likes page to use this extension</p>
         </div>
         
         <div class="content">
             <div class="stats">
                 <div class="stat-item">
-                    <span class="stat-label">Loaded Posts:</span>
+                    <span class="stat-label">📊 Loaded Posts:</span>
                     <div class="stat-value-with-reset">
                         <span id="postCount" class="stat-value">0</span>
-                        <button id="resetButton" class="btn-reset" title="Reset loaded posts">✕</button>
+                        <button id="resetButton" class="btn-reset" title="Reset all loaded posts" aria-label="Reset loaded posts">✕</button>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-label">Status:</span>
+                    <span class="stat-label">⚡ Status:</span>
                     <span id="status" class="stat-value">Ready</span>
                 </div>
             </div>
             
             <div class="buttons">
-                <button id="loadButton" class="btn primary">
+                <button id="loadButton" class="btn primary" aria-describedby="loadButtonDescription">
                     <span id="loadButtonText">Load All Liked Posts</span>
                 </button>
+                <div id="loadButtonDescription" class="sr-only">
+                    Automatically scroll through your likes page and collect all your liked posts
+                </div>
                 
-                <button id="saveButton" class="btn secondary" disabled>
-                    Save as HTML
+                <button id="saveButton" class="btn secondary" disabled aria-describedby="saveButtonDescription">
+                    💾 Save as HTML
                 </button>
+                <div id="saveButtonDescription" class="sr-only">
+                    Export your collected posts as a shareable HTML file
+                </div>
             </div>
             
-            <div id="progress" class="progress-container hidden">
+            <div id="progress" class="progress-container hidden" role="progressbar" aria-label="Loading progress">
                 <div class="progress-bar">
                     <div id="progressFill" class="progress-fill"></div>
                 </div>

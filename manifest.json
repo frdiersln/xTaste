@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "xTaste - Twitter Likes Exporter",
+  "name": "xTaste - X/Twitter Likes Exporter",
   "version": "1.0.0",
   "description": "Save and share your X/Twitter likes as a shareable HTML file",
   "permissions": [
