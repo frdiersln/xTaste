@@ -140,6 +140,42 @@ body::before {
     z-index: 1;
     text-shadow: 0 2px 10px rgba(103, 211, 243, 0.3);
     letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+}
+
+.header a{
+    color: var(--color-sky-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.support-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(103, 211, 243, 0.1) 0%, rgba(239, 74, 132, 0.1) 100%);
+    border: 1px solid var(--color-sky-blue);
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(103, 211, 243, 0.2);
+}
+
+.support-link:hover {
+    background: linear-gradient(135deg, var(--color-sky-blue) 0%, var(--color-hot-pink) 100%);
+    color: var(--color-white);
+    border-color: transparent;
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 4px 20px rgba(103, 211, 243, 0.4);
+}
+
+.support-indicator {
+    display: inline-block;
+    font-size: 1.66rem;
 }
 
 .warning {
