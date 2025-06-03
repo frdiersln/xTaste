@@ -261,43 +261,50 @@ class PopupController {
             background: #000;
             color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .header {
             background: #16181c;
-            padding: 20px;
+            padding: clamp(15px, 4vw, 20px);
             text-align: center;
             border-bottom: 1px solid #333;
         }
 
         .header h1 {
-            font-size: 28px;
+            font-size: clamp(20px, 5vw, 28px);
             color: #1d9bf0;
-            margin-bottom: 10px;
+            margin-bottom: clamp(6px, 2vw, 10px);
+            word-break: break-word;
         }
 
         .header p {
             color: #8899a6;
-            font-size: 16px;
+            font-size: clamp(12px, 3vw, 16px);
+            word-wrap: break-word;
+            line-height: 1.4;
         }
 
         .container {
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px;
+            padding: clamp(10px, 3vw, 20px);
+            width: 100%;
         }
 
         .post {
             background: #16181c;
             border: 1px solid #333;
             border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 16px;
+            padding: clamp(12px, 3vw, 16px);
+            margin-bottom: clamp(12px, 3vw, 16px);
             transition: border-color 0.2s ease;
             cursor: pointer;
             text-decoration: none;
             color: inherit;
             display: block;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .post:hover {
@@ -306,74 +313,98 @@ class PopupController {
 
         .post-header {
             display: flex;
-            align-items: center;
-            margin-bottom: 12px;
+            align-items: flex-start;
+            margin-bottom: clamp(8px, 2vw, 12px);
+            gap: clamp(8px, 2vw, 12px);
         }
 
         .avatar {
-            width: 40px;
-            height: 40px;
+            width: clamp(32px, 8vw, 40px);
+            height: clamp(32px, 8vw, 40px);
             border-radius: 50%;
-            margin-right: 12px;
             background: #333;
+            flex-shrink: 0;
         }
 
         .user-info {
             flex: 1;
+            min-width: 0;
+            overflow: hidden;
         }
 
         .display-name {
             font-weight: 600;
             color: #fff;
             margin-bottom: 2px;
+            font-size: clamp(13px, 3.5vw, 16px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .username {
             color: #8899a6;
-            font-size: 14px;
+            font-size: clamp(11px, 3vw, 14px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .post-content {
-            margin-bottom: 12px;
-            font-size: 16px;
+            margin-bottom: clamp(8px, 2vw, 12px);
+            font-size: clamp(13px, 3.5vw, 16px);
             white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.5;
         }
 
         .post-media {
-            margin-bottom: 12px;
+            margin-bottom: clamp(8px, 2vw, 12px);
+            overflow: hidden;
         }
 
         .post-media img {
             max-width: 100%;
+            height: auto;
             border-radius: 8px;
-            margin-bottom: 8px;
+            margin-bottom: clamp(4px, 1vw, 8px);
+            display: block;
         }
 
         .post-meta {
             color: #8899a6;
-            font-size: 14px;
+            font-size: clamp(11px, 3vw, 14px);
+            word-wrap: break-word;
+            line-height: 1.3;
         }
 
         .stats {
             background: #16181c;
             border: 1px solid #333;
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: clamp(15px, 4vw, 20px);
+            margin-bottom: clamp(15px, 4vw, 20px);
             text-align: center;
         }
 
         .stats h2 {
             color: #1d9bf0;
-            margin-bottom: 10px;
+            margin-bottom: clamp(6px, 2vw, 10px);
+            font-size: clamp(16px, 4vw, 20px);
+        }
+
+        .stats p {
+            font-size: clamp(12px, 3vw, 16px);
+            margin-bottom: clamp(4px, 1vw, 8px);
         }
 
         .footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: clamp(20px, 5vw, 40px) clamp(10px, 3vw, 20px);
             color: #8899a6;
             border-top: 1px solid #333;
-            margin-top: 40px;
+            margin-top: clamp(20px, 5vw, 40px);
         }
 
         .footer a {
@@ -381,13 +412,93 @@ class PopupController {
             text-decoration: none;
         }
 
-        @media (max-width: 768px) {
+        /* Mobile optimizations */
+        @media (max-width: 480px) {
             .container {
-                padding: 10px;
+                padding: 8px;
             }
             
             .post {
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 8px;
+            }
+
+            .post-header {
+                margin-bottom: 8px;
+                gap: 8px;
+            }
+
+            .avatar {
+                width: 28px;
+                height: 28px;
+            }
+
+            .post-content {
+                margin-bottom: 8px;
+                font-size: 14px;
+            }
+
+            .post-meta {
+                font-size: 12px;
+            }
+
+            .stats {
                 padding: 12px;
+                margin-bottom: 12px;
+                border-radius: 8px;
+            }
+
+            .header {
+                padding: 12px 8px;
+            }
+        }
+
+        /* Tablet optimizations */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .post {
+                padding: 14px;
+            }
+
+            .avatar {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        /* Large screen optimizations */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 650px;
+            }
+        }
+
+        /* Landscape mobile optimizations */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .header {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+                margin-bottom: 4px;
+            }
+            
+            .header p {
+                font-size: 12px;
+            }
+            
+            .container {
+                padding: 8px;
+            }
+            
+            .post {
+                padding: 8px;
+                margin-bottom: 8px;
             }
         }
     </style>
@@ -396,6 +507,7 @@ class PopupController {
     <div class="header">
         <h1>My X/Twitter Likes</h1>
         <p>Exported with xTaste • ${currentDate} • ${posts.length} posts</p>
+        <p>Click on any post to view the original on X/Twitter</p>
     </div>
 
     <div class="container">
